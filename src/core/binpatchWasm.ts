@@ -2,17 +2,14 @@ export type WasmVerifyOutput = {
   valid_offsets: number[];
 };
 
-type BinpatchWasmModule =
-  typeof import("../../crates/binpatch-wasm/pkg/binpatch_wasm.js");
+type BinpatchWasmModule = typeof import("binpatch-wasm");
 
 let modulePromise: Promise<BinpatchWasmModule> | null = null;
 
 async function loadBinpatchWasmModule(): Promise<BinpatchWasmModule> {
   if (!modulePromise) {
     modulePromise = (async () => {
-      const mod: BinpatchWasmModule = await import(
-        "../../crates/binpatch-wasm/pkg/binpatch_wasm.js"
-      );
+      const mod: BinpatchWasmModule = await import("binpatch-wasm");
       await mod.default();
       return mod;
     })();

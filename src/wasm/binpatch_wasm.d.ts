@@ -1,4 +1,4 @@
-declare module "../../crates/binpatch-wasm/pkg/binpatch_wasm.js" {
+declare module "binpatch-wasm" {
   export default function init(input?: unknown): Promise<void>;
 
   export function verify(profile_toml: string, firmware: Uint8Array): unknown;

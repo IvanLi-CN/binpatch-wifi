@@ -1,4 +1,10 @@
+import { fileURLToPath } from "node:url";
 import type { StorybookConfig } from "@storybook/react-vite";
+import { mergeConfig } from "vite";
+
+const binpatchWasmPath = fileURLToPath(
+  new URL("../crates/binpatch-wasm/pkg/binpatch_wasm.js", import.meta.url),
+);
 
 const config: StorybookConfig = {
   stories: ["../src/**/*.stories.@(ts|tsx|mdx)"],
@@ -13,6 +19,15 @@ const config: StorybookConfig = {
   },
   docs: {
     autodocs: "tag",
+  },
+  async viteFinal(baseConfig) {
+    return mergeConfig(baseConfig, {
+      resolve: {
+        alias: {
+          "binpatch-wasm": binpatchWasmPath,
+        },
+      },
+    });
   },
 };
 

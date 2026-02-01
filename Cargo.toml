@@ -1,0 +1,8 @@
+[workspace]
+members = [
+  "crates/binpatch-core",
+  "crates/binpatch-cli",
+  "crates/binpatch-wasm",
+]
+resolver = "2"
+

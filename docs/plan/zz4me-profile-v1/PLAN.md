@@ -2,9 +2,9 @@
 
 ## 状态
 
-- Status: 待实现
+- Status: 已完成
 - Created: 2026-01-31
-- Last: 2026-01-31
+- Last: 2026-02-01
 
 ## 背景 / 问题陈述
 
@@ -110,9 +110,9 @@
 
 ## 实现里程碑（Milestones）
 
-- [ ] M1: 定稿 profile schema（v1）与校验规则
-- [ ] M2: 提供参考 profile（对应当前方案）
-- [ ] M3: 文档落地（`profiles/README.md`）并从计划资产晋升
+- [x] M1: 定稿 profile schema（v1）与校验规则
+- [x] M2: 提供参考 profile（对应当前方案）
+- [x] M3: 文档落地（`profiles/README.md`）并从计划资产晋升
 
 ## 方案概述（Approach, high-level）
 
@@ -129,6 +129,7 @@
 ## 变更记录（Change log）
 
 - 2026-01-31: 新建计划。
+- 2026-02-01: 完成 v1 schema（含示例 profile），并晋升稳定文档到 `profiles/README.md`。
 
 ## 参考（References）
 

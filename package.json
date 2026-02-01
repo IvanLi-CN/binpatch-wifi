@@ -1,0 +1,44 @@
+{
+  "name": "binpatch-wifi",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "wasm:build:dev": "wasm-pack build crates/binpatch-wasm --target web --dev",
+    "wasm:build": "wasm-pack build crates/binpatch-wasm --target web --release",
+    "dev": "bun run wasm:build:dev && vite",
+    "build": "bun run wasm:build && vite build",
+    "preview": "vite preview",
+    "storybook": "bun run wasm:build:dev && storybook dev -p 65176 -h 127.0.0.1 --no-open --exact-port",
+    "storybook:ci": "bun run wasm:build:dev && storybook dev -p 65176 -h 127.0.0.1 --ci --disable-telemetry --no-open --exact-port",
+    "build-storybook": "bun run wasm:build && storybook build",
+    "lint": "biome lint .",
+    "format": "biome format --write .",
+    "check": "biome check .",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.3.13",
+    "@commitlint/cli": "^20.4.0",
+    "@commitlint/config-conventional": "^20.4.0",
+    "@storybook/addon-a11y": "^10.2.3",
+    "@storybook/addon-docs": "^10.2.3",
+    "@storybook/addon-links": "^10.2.3",
+    "@storybook/react-vite": "^10.2.3",
+    "@types/react": "^19.0.11",
+    "@types/react-dom": "^19.0.4",
+    "@vitejs/plugin-react": "^4.3.4",
+    "commitlint-plugin-function-rules": "^4.3.1",
+    "lefthook": "^2.0.16",
+    "storybook": "^10.2.3",
+    "typescript": "^5.7.3",
+    "vite": "^6.1.0",
+    "vitest": "^2.1.8"
+  }
+}

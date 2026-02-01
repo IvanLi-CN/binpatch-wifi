@@ -2,7 +2,7 @@
 
 ## 状态
 
-- Status: 待实现
+- Status: 已完成
 - Created: 2026-01-31
 - Last: 2026-02-01
 
@@ -41,7 +41,7 @@
 
 ### MUST
 
-- 默认离线：不需要启动服务端也能跑（`npm run dev` + 静态 `dist`）。
+- 默认离线：不需要启动服务端也能跑（`bun run dev` + 静态 `dist`）。
 - 支持大文件（至少 16MB）在浏览器内处理的基础设施：使用 `ArrayBuffer/Uint8Array` 工作流。
 - 明确“核心逻辑不依赖 DOM”，可被单元测试覆盖。
 
@@ -70,7 +70,7 @@ None
 
 ## 实现前置条件（Definition of Ready / Preconditions）
 
-- 主人确认：首版包管理器（npm/pnpm）与部署目标（GitHub Pages 或其它静态托管）。
+- 主人确认：首版包管理器（默认 Bun）与部署目标（GitHub Pages 或其它静态托管）。
 - 主人确认：是否允许引入一个可选的本地代理 server（用于 GitHub 下载/CORS；默认关闭）。
 
 ## 非功能性验收 / 质量门槛（Quality Gates）
@@ -99,9 +99,9 @@ None
 
 ## 实现里程碑（Milestones）
 
-- [ ] M1: 初始化前端工程骨架（build/dev）
-- [ ] M2: 建立模块分层（core/ui/optional）与最小页面
-- [ ] M3: 建立 CI（typecheck + unit tests）
+- [x] M1: 初始化前端工程骨架（build/dev）
+- [x] M2: 建立模块分层（core/ui/optional）与最小页面
+- [x] M3: 建立 CI（typecheck + unit tests）
 
 ## 方案概述（Approach, high-level）
 
@@ -117,6 +117,10 @@ None
 ## 变更记录（Change log）
 
 - 2026-01-31: 新建计划。
+- 2026-02-01: 完成 M1–M3（Vite+TS 骨架、core/ui/optional 分层、CI typecheck+unit tests）。
+- 2026-02-01: 工具链默认切到 Bun；Vite dev/preview 默认端口固定为 65173/65175（bind `127.0.0.1`，避免冲突与意外暴露）。
+- 2026-02-01: Repo hygiene：引入 Biome + Lefthook + Commitlint（与常用仓库习惯对齐）。
+- 2026-02-01: 增加 Storybook（默认端口 65176）作为 UI 基础设施的一部分。
 
 ## 参考（References）
 

@@ -2,9 +2,9 @@
 
 ## 状态
 
-- Status: 待实现
+- Status: 重新设计（#k3p8m）
 - Created: 2026-01-31
-- Last: 2026-01-31
+- Last: 2026-02-01
 
 ## 背景 / 问题陈述
 
@@ -133,6 +133,7 @@ None
 ## 变更记录（Change log）
 
 - 2026-01-31: 新建计划。
+- 2026-02-01: 重新设计：核心实现收敛为 Rust core（CLI + WASM 复用），见 #k3p8m。
 
 ## 参考（References）
 

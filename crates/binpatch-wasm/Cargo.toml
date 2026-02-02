@@ -1,0 +1,16 @@
+[package]
+name = "binpatch-wasm"
+version = "0.0.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+binpatch-core = { path = "../binpatch-core" }
+
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+js-sys = "0.3.77"
+serde = { version = "1.0.219", features = ["derive"] }
+serde-wasm-bindgen = "0.6.5"
+wasm-bindgen = "0.2.100"

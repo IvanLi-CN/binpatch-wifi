@@ -1,0 +1,26 @@
+profile_version = 1
+id = "wifi_cfg_v1_crc16_modbus"
+name = "Generic WiFi config v1 (CRC16/MODBUS)"
+
+[scan]
+magic_u32 = 0x57494649
+endianness = "little"
+struct_size = 108
+max_matches = 4
+
+[layout]
+version = 1
+version_offset = 4
+version_len = 2
+checksum_offset = 6
+checksum_len = 2
+ssid_len_offset = 8
+psk_len_offset = 9
+ssid_offset = 12
+ssid_max = 32
+psk_offset = 44
+psk_max = 64
+
+[checksum]
+algo = "crc16_modbus"
+skip = [{ offset = 6, len = 2 }]

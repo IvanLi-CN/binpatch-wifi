@@ -60,8 +60,9 @@
 
 | ID   | Title | Status | Plan | Last | Notes |
 |-----:|-------|--------|------|------|-------|
-| d77uv | 项目选型与仓库骨架 | 待实现 | `d77uv-stack-and-scaffold/PLAN.md` | 2026-02-01 | - |
-| zz4me | Profile(TOML) v1 规范与契约 | 待实现 | `zz4me-profile-v1/PLAN.md` | 2026-01-31 | 规则按参考实现冻结（WIFI/108/CRC16） |
-| fab9f | 核心扫描/校验/替换库 + 单测 | 待实现 | `fab9f-core-bytes-patching/PLAN.md` | 2026-01-31 | `.bin/.elf` 支持；烧录仅 `.bin` |
+| d77uv | 项目选型与仓库骨架 | 已完成 | `d77uv-stack-and-scaffold/PLAN.md` | 2026-02-01 | - |
+| k3p8m | Rust core + Rust CLI + WASM(Web) 统一核心 | 已完成 | `k3p8m-rust-core-cli-wasm/PLAN.md` | 2026-02-01 | 替代 TS core（#fab9f） |
+| zz4me | Profile(TOML) v1 规范与契约 | 已完成 | `zz4me-profile-v1/PLAN.md` | 2026-02-01 | 规则按参考实现冻结（WIFI/108/CRC16） |
+| fab9f | 核心扫描/校验/替换库 + 单测 | 重新设计（#k3p8m） | `fab9f-core-bytes-patching/PLAN.md` | 2026-02-01 | 方向调整：Rust core + CLI + WASM |
 | f5pnu | GitHub Releases 拉取与下载（可选代理） | 待实现 | `f5pnu-github-releases/PLAN.md` | 2026-01-31 | 需要 releases + 下载（含可选代理） |
 | 9uucu | Web UI 工作流 + Web Serial 烧录 | 待实现 | `9uucu-web-ui-and-web-serial/PLAN.md` | 2026-01-31 | 自动烧录 + localStorage（SSID/PSK） |
